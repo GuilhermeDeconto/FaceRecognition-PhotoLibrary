@@ -5,14 +5,21 @@ from joblib import Parallel, delayed
 
 # Author: Guilherme Dall'Agnol Deconto
 # Version: 1.0
+# Date: 02/12/2021
 
-# Load a sample picture and learn how to recognize it
-# If needed, you can load more pictures and add them to the known_face_encodings
-picture_of_me = face_recognition.load_image_file("me.jpg")
-my_face_encoding = face_recognition.face_encodings(picture_of_me)[0]
+# Array of images to learn
+images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg", "image7.jpg", "image8.jpg", "image9.jpg", "image10.jpg"]
+
+known_face_encodings = []
 
 # Returns current working directory
 directory = os.getcwd()
+
+# Load image and learn how to recognize it
+for image in images:
+    image_file = face_recognition.load_image_file(image)
+    face_encoding = face_recognition.face_encodings(image_file)[0]
+    known_face_encodings.append(face_encoding)
 
 def find(filename):
     # Check the file extension to see if it's an image (jpg, png, etc)
@@ -27,9 +34,9 @@ def find(filename):
             # Tolerance is the distance between faces
             # In this case I'm using 0.5 which is more strict
             # But you can use a higher value if you want more performance and more matches
-             results = face_recognition.compare_faces([my_face_encoding], face_encoding, 0.5)
+             results = face_recognition.compare_faces(known_face_encodings, face_encoding, 0.5)
              # If it's a match, save the image to another folder
-             if results[0] == True:
+             if any(results) == True:
                  copyfile(filename, "./foundthem/" + filename)
                  continue
                  
