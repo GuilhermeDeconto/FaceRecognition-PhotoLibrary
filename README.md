@@ -4,8 +4,8 @@ This code was developed in order to find all the photos that a particular person
 
 ## Requirements
 
-- Python 3
-- joblib
+- [Python 3](https://www.python.org/downloads/)
+- [joblib](https://pypi.org/project/joblib/)
     - pip install joblib
-- face-recognition
+- [face-recognition](https://pypi.org/project/face-recognition/)
     - pip install face-recognition
