@@ -1,8 +1,6 @@
 # FaceRecognition-PhotoLibrary
 
-This code was developed in order to find all the photos that a particular person appears in a large photo library.
-
-This code is intended to facilitate the search for images, accelerating this process, which can be exhausting.
+This code was developed in order to find all the photos that a particular person appears in a large photo library and is intended to facilitate the search for images, accelerating this process, which can be exhausting.
 
 ## Requirements
 
