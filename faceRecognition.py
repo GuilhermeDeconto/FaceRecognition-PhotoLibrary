@@ -3,6 +3,9 @@ import os
 from shutil import copyfile
 from joblib import Parallel, delayed
 
+# Author: Guilherme Dall'Agnol Deconto
+# Version: 1.0
+
 # Load a sample picture and learn how to recognize it
 # If needed, you can load more pictures and add them to the known_face_encodings
 picture_of_me = face_recognition.load_image_file("me.jpg")
